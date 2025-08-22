@@ -1,4 +1,13 @@
 BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "clv_global_tag" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"description"	INTEGER,
+	"color"	INTEGER,
+	"notes"	INTEGER,
+	"active"	INTEGER,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "clv_phase" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,

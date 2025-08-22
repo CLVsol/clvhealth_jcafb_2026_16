@@ -7,3 +7,4 @@ from . import res_partner
 from . import res_company
 from . import res_users
 from . import clv_phase
+from . import clv_global_tag

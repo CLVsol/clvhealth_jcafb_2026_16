@@ -1,4 +1,13 @@
 BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "clv_phase" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"description"	TEXT,
+	"code"	INTEGER,
+	"notes"	INTEGER,
+	"active"	INTEGER,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "res_company" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,

@@ -1,4 +1,9 @@
 BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "res_company" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "res_country" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,
@@ -7,7 +12,7 @@ CREATE TABLE IF NOT EXISTS "res_country" (
 	PRIMARY KEY("id")
 );
 CREATE TABLE IF NOT EXISTS "res_partner" (
-	"id"	INTEGER,
+	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,
 	"type"	TEXT,
 	"street_name"	TEXT,
@@ -24,6 +29,26 @@ CREATE TABLE IF NOT EXISTS "res_partner" (
 	"country_id"	INTEGER,
 	"country"	TEXT,
 	"active"	TEXT,
-	"ext_id"	INTEGER
+	"ext_id"	INTEGER,
+	PRIMARY KEY("id")
+);
+CREATE TABLE IF NOT EXISTS "res_users" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"partner_id"	INTEGER,
+	"partner"	TEXT,
+	"company_id"	INTEGER,
+	"company"	TEXT,
+	"parent_id"	INTEGER,
+	"parent"	TEXT,
+	"tz"	TEXT,
+	"lang"	TEXT,
+	"country_id"	INTEGER,
+	"country"	TEXT,
+	"login"	TEXT,
+	"password"	TEXT,
+	"active"	INTEGER,
+	"image_1920"	TEXT,
+	PRIMARY KEY("id")
 );
 COMMIT;

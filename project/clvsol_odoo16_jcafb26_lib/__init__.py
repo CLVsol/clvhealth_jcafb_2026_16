@@ -13,3 +13,4 @@ from . import clv_patient_marker
 from . import clv_patient_tag
 from . import clv_patient
 from . import clv_partner_entity_street_pattern
+from . import clv_partner_entity_contact_information_pattern

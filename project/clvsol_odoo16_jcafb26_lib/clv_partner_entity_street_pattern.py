@@ -23,7 +23,8 @@ def get_sqlite(server_url, db_name, username, password, sqlite3_db_name, initial
 
     _logger.info(u'%s %s %s %s', '-->', 'get_sqlite', server_url, db_name)
 
-    clv_partner_entity_street_pattern_fields = ['id', 'street_name', 'district', 'notes', 'active']
+    clv_partner_entity_street_pattern_fields = ['id', 'street_name', 'district', 'notes', 'active',
+                                                'count_street_pattern_matches']
 
     common = client.ServerProxy('%s/xmlrpc/2/common' % server_url)
     user_id = common.authenticate(db_name, username, password, {})

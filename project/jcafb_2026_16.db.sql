@@ -8,6 +8,14 @@ CREATE TABLE IF NOT EXISTS "clv_global_tag" (
 	"active"	INTEGER,
 	PRIMARY KEY("id")
 );
+CREATE TABLE IF NOT EXISTS "clv_patient_category" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"description"	INTEGER,
+	"color"	INTEGER,
+	"active"	INTEGER,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "clv_phase" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,

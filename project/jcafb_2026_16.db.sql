@@ -8,12 +8,25 @@ CREATE TABLE IF NOT EXISTS "clv_global_tag" (
 	"active"	INTEGER,
 	PRIMARY KEY("id")
 );
+CREATE TABLE IF NOT EXISTS "clv_partner_entity_contact_information_pattern" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"street_name"	TEXT,
+	"street_number"	TEXT,
+	"street2"	TEXT,
+	"district"	TEXT,
+	"notes"	INTEGER,
+	"active"	INTEGER,
+	"count_contact_information_pattern_matches"	INTEGER,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "clv_partner_entity_street_pattern" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"street_name"	TEXT,
 	"district"	TEXT,
 	"notes"	TEXT,
 	"active"	INTEGER,
+	"count_street_pattern_matches"	INTEGER,
 	PRIMARY KEY("id")
 );
 CREATE TABLE IF NOT EXISTS "clv_patient" (

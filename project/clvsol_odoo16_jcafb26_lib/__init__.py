@@ -10,3 +10,4 @@ from . import clv_phase
 from . import clv_global_tag
 from . import clv_patient_category
 from . import clv_patient_marker
+from . import clv_patient_tag

@@ -8,6 +8,39 @@ CREATE TABLE IF NOT EXISTS "clv_global_tag" (
 	"active"	INTEGER,
 	PRIMARY KEY("id")
 );
+CREATE TABLE IF NOT EXISTS "clv_patient" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"code"	TEXT,
+	"gender"	TEXT,
+	"birthday"	TEXT,
+	"phase_id"	INTEGER,
+	"phase"	TEXT,
+	"address_name"	TEXT,
+	"street"	TEXT,
+	"street_name"	TEXT,
+	"street_number"	TEXT,
+	"street2"	TEXT,
+	"street_number2"	INTEGER,
+	"district"	TEXT,
+	"zip"	TEXT,
+	"city_id"	INTEGER,
+	"city"	TEXT,
+	"state_id"	INTEGER,
+	"country_state"	TEXT,
+	"country_id"	INTEGER,
+	"country"	TEXT,
+	"mobile"	INTEGER,
+	"email"	INTEGER,
+	"category_ids"	TEXT,
+	"categories"	TEXT,
+	"marker_ids"	TEXT,
+	"markers"	TEXT,
+	"tag_ids"	TEXT,
+	"tags"	TEXT,
+	"active"	INTEGER,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "clv_patient_category" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,
@@ -25,12 +58,11 @@ CREATE TABLE IF NOT EXISTS "clv_patient_marker" (
 	PRIMARY KEY("id")
 );
 CREATE TABLE IF NOT EXISTS "clv_patient_tag" (
-	"id"	INTEGER NOT NULL,
-	"name"	TEXT,
-	"description"	INTEGER,
-	"color"	INTEGER,
-	"active"	INTEGER,
-	PRIMARY KEY("id")
+"id" INTEGER,
+  "name" TEXT,
+  "description" INTEGER,
+  "color" INTEGER,
+  "active" INTEGER
 );
 CREATE TABLE IF NOT EXISTS "clv_phase" (
 	"id"	INTEGER NOT NULL UNIQUE,
@@ -92,5 +124,11 @@ CREATE TABLE IF NOT EXISTS "res_users" (
 	"active"	INTEGER,
 	"image_1920"	TEXT,
 	PRIMARY KEY("id")
+);
+CREATE UNIQUE INDEX "idx_clv_patient_code" ON "clv_patient" (
+	"code"	ASC
+);
+CREATE INDEX "idx_clv_patient_name" ON "clv_global_tag" (
+	"name"	ASC
 );
 COMMIT;

@@ -24,6 +24,14 @@ CREATE TABLE IF NOT EXISTS "clv_patient_marker" (
 	"active"	INTEGER,
 	PRIMARY KEY("id")
 );
+CREATE TABLE IF NOT EXISTS "clv_patient_tag" (
+	"id"	INTEGER NOT NULL,
+	"name"	TEXT,
+	"description"	INTEGER,
+	"color"	INTEGER,
+	"active"	INTEGER,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "clv_phase" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,

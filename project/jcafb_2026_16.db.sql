@@ -8,6 +8,14 @@ CREATE TABLE IF NOT EXISTS "clv_global_tag" (
 	"active"	INTEGER,
 	PRIMARY KEY("id")
 );
+CREATE TABLE IF NOT EXISTS "clv_partner_entity_street_pattern" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"street_name"	TEXT,
+	"district"	TEXT,
+	"notes"	TEXT,
+	"active"	INTEGER,
+	PRIMARY KEY("id")
+);
 CREATE TABLE IF NOT EXISTS "clv_patient" (
 	"id"	INTEGER NOT NULL UNIQUE,
 	"name"	TEXT,
